@@ -1,14 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// ./next.config.js
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-        port: "",
       },
     ],
   },
+  experimental: {
+    taint: true,
+  },
+  // ...other config settings
 };
+
+module.exports = nextConfig;
